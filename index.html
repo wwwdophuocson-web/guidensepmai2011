@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌷 Lời Chúc 20/11 🌷</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    color: #3a2b3a;
+    background: linear-gradient(135deg, #ffd9e8 0%, #ffeef5 45%, #dff6ff 100%);
+  }
+
+  .card {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    border-radius: 28px;
+    padding: 32px 28px 30px;
+    box-shadow: 0 20px 50px rgba(214, 91, 141, .22);
+    animation: pop .45s ease;
+  }
+  @keyframes pop {
+    from { opacity: 0; transform: translateY(22px) scale(.96); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  h1 {
+    font-size: 26px;
+    text-align: center;
+    background: linear-gradient(90deg, #ff4f92, #ff8ab8, #6ec6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 6px;
+  }
+  .sub {
+    text-align: center;
+    font-size: 13.5px;
+    color: #a8839a;
+    margin-bottom: 22px;
+  }
+
+  .field { display: block; margin-bottom: 16px; }
+  .field > span {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #7c5c72;
+    margin-bottom: 7px;
+  }
+  .field small {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #b9a3b1;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 13px 16px;
+    font-size: 15px;
+    font-family: inherit;
+    border: 2px solid #ffe0ee;
+    border-radius: 14px;
+    background: #fff8fc;
+    outline: none;
+    transition: .25s;
+  }
+  input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #ff8ab8;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(255, 138, 184, .18);
+  }
+
+  .gender { display: flex; gap: 12px; }
+  .radio {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 8px;
+    border: 2px solid #ffe0ee;
+    border-radius: 14px;
+    background: #fff8fc;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: #7c5c72;
+    transition: .2s;
+    user-select: none;
+  }
+  .radio:hover { border-color: #ffc2da; }
+  .radio input { accent-color: #ff4f92; width: 16px; height: 16px; cursor: pointer; }
+  .radio:has(input:checked) {
+    border-color: #ff4f92;
+    background: #fff0f6;
+    box-shadow: 0 0 0 4px rgba(255, 79, 146, .12);
+  }
+
+  button {
+    width: 100%;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff4f92, #ff8ab8);
+    box-shadow: 0 10px 24px rgba(255, 79, 146, .35);
+    transition: .2s;
+  }
+  button:hover  { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(255, 79, 146, .45); }
+  button:active { transform: translateY(0) scale(.98); }
+
+  button.ghost {
+    margin-top: 22px;
+    background: #fff;
+    color: #ff4f92;
+    border: 2px solid #ffd0e2;
+    box-shadow: none;
+  }
+  button.ghost:hover { background: #fff5fa; box-shadow: none; }
+
+  /* ---------- LOADING ---------- */
+  .loading { text-align: center; }
+  .hearts { font-size: 30px; margin-bottom: 14px; }
+  .hearts span { display: inline-block; animation: bounce 1.1s infinite ease-in-out; }
+  .hearts span:nth-child(2) { animation-delay: .18s; }
+  .hearts span:nth-child(3) { animation-delay: .36s; }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50%      { transform: translateY(-14px) scale(1.15); }
+  }
+
+  .spinner {
+    width: 72px; height: 72px;
+    margin: 0 auto 18px;
+    border: 7px solid #ffe6f1;
+    border-top-color: #ff4f92;
+    border-right-color: #ff8ab8;
+    border-radius: 50%;
+    animation: spin .9s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .loading-text { font-size: 15px; color: #a8839a; margin-bottom: 18px; }
+
+  .bar {
+    height: 10px;
+    background: #ffe6f1;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #ff4f92, #ff8ab8, #6ec6ff);
+    animation: fill 2.2s ease forwards;
+  }
+  @keyframes fill { to { width: 100%; } }
+
+  /* ---------- KẾT QUẢ ---------- */
+  .ribbon { font-size: 46px; text-align: center; animation: bounce 1.4s infinite; }
+  .result h2 {
+    text-align: center;
+    font-size: 21px;
+    color: #ff4f92;
+    margin: 6px 0 14px;
+  }
+  .result p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #5b4555;
+    text-align: justify;
+    background: #fff7fb;
+    border-left: 4px solid #ffb3d1;
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+  .result p b { color: #ff4f92; }
+
+  /* ---------- 6 TẤM HÌNH BO GÓC ---------- */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .pic {
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    border: 3px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: 0 8px 18px rgba(214, 91, 141, .18);
+    overflow: hidden;
+    transition: .25s;
+    animation: pop .5s ease backwards;
+  }
+  .pic:hover { transform: translateY(-5px) scale(1.04); }
+  .pic span { font-size: 34px; }
+  .pic small { font-size: 10.5px; font-weight: 700; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.18); }
+
+  .p1 { background: linear-gradient(135deg, #ff9ec4, #ff6fa5); }
+  .p2 { background: linear-gradient(135deg, #ffd18e, #ffab5e); }
+  .p3 { background: linear-gradient(135deg, #a5e4c0, #5ecb92); }
+  .p4 { background: linear-gradient(135deg, #9fd8ff, #5cb8ff); }
+  .p5 { background: linear-gradient(135deg, #c7a8ff, #9a72ff); }
+  .p6 { background: linear-gradient(135deg, #ffb3b3, #ff7b7b); }
+
+  .pic:nth-child(1) { animation-delay: .05s; }
+  .pic:nth-child(2) { animation-delay: .10s; }
+  .pic:nth-child(3) { animation-delay: .15s; }
+  .pic:nth-child(4) { animation-delay: .20s; }
+  .pic:nth-child(5) { animation-delay: .25s; }
+  .pic:nth-child(6) { animation-delay: .30s; }
+
+  @media (max-width: 420px) {
+    .card { padding: 26px 20px; }
+    h1 { font-size: 22px; }
+    .pic span { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ FORM ============ -->
+  <div class="card" id="formCard">
+    <h1>🌷 Lời Chúc 20/11 🌷</h1>
+    <p class="sub">Nhân ngày Nhà giáo Việt Nam 20/11</p>
+
+    <label class="field">
+      <span>Tên của bạn</span>
+      <input type="text" id="name" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off">
+    </label>
+
+    <div class="field">
+      <span>Bạn muốn gửi tới</span>
+      <div class="gender">
+        <label class="radio">
+          <input type="radio" name="gender" value="thầy" checked>
+          <span>👨‍🏫 Thầy</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="gender" value="cô">
+          <span>👩‍🏫 Cô</span>
+        </label>
+      </div>
+    </div>
+
+    <label class="field">
+      <span>Mật khẩu</span>
+      <input type="password" id="password" placeholder="Nhập mật khẩu...">
+      <small>Gợi ý: tên của người gửi + yêu sếp Mai</small>
+    </label>
+
+    <button id="submitBtn">Gửi lời chúc 💌</button>
+  </div>
+
+  <!-- ============ LOADING ============ -->
+  <div class="card loading" id="loadingCard" hidden>
+    <div class="hearts"><span>💖</span><span>💝</span><span>💗</span></div>
+    <div class="spinner"></div>
+    <p class="loading-text">Đang gói lời chúc thật xinh...</p>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <!-- ============ KẾT QUẢ ============ -->
+  <div class="card result" id="resultCard" hidden>
+    <div class="ribbon">🎉</div>
+    <h2 id="resultTitle"></h2>
+    <p id="resultMsg"></p>
+
+    <div class="gallery">
+      <div class="pic p1"><span>🌷</span><small>TRI ÂN</small></div>
+      <div class="pic p2"><span>📚</span><small>CON ĐÒ</small></div>
+      <div class="pic p3"><span>🎓</span><small>ƯỚC MƠ</small></div>
+      <div class="pic p4"><span>✏️</span><small>BÀI HỌC</small></div>
+      <div class="pic p5"><span>🌻</span><small>YÊU THƯƠNG</small></div>
+      <div class="pic p6"><span>💐</span><small>LỜI CHÚC</small></div>
+    </div>
+
+    <button class="ghost" id="againBtn">Viết lời chúc khác ✍️</button>
+  </div>
+
+<script>
+  const formCard    = document.getElementById('formCard');
+  const loadingCard = document.getElementById('loadingCard');
+  const resultCard  = document.getElementById('resultCard');
+  const nameInput   = document.getElementById('name');
+  const passInput   = document.getElementById('password');
+  const submitBtn   = document.getElementById('submitBtn');
+  const againBtn    = document.getElementById('againBtn');
+  const resultTitle = document.getElementById('resultTitle');
+  const resultMsg   = document.getElementById('resultMsg');
+
+  const MAT_KHAU_DUNG = '1'; // mật khẩu: ngày Nhà giáo Việt Nam
+
+  submitBtn.addEventListener('click', function () {
+    const name   = nameInput.value.trim();
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+    const pass   = passInput.value.trim();
+
+    /* ---- 1. Kiểm tra ô tên trống ---- */
+    if (name === '') {
+      alert('Vui lòng nhập tên!');
+      nameInput.focus();
+      return;
+    }
+
+    /* ---- 2. Kiểm tra mật khẩu ---- */
+    if (pass === '') {
+      alert('Vui lòng nhập mật khẩu!');
+      passInput.focus();
+      return;
+    }
+    if (pass !== MAT_KHAU_DUNG) {
+      alert('Mật khẩu không đúng!\nGợi ý: ngày Nhà giáo Việt Nam (4 chữ số).');
+      passInput.value = '';
+      passInput.focus();
+      return;
+    }
+
+    /* ---- 3. Hiện loading dễ thương ---- */
+    formCard.hidden    = true;
+    resultCard.hidden  = true;
+    loadingCard.hidden = false;
+
+    // reset thanh tiến trình cho lần sau
+    const barFill = loadingCard.querySelector('.bar-fill');
+    barFill.style.animation = 'none';
+    void barFill.offsetWidth;         // reflow để chạy lại animation
+    barFill.style.animation = '';
+
+    /* ---- 4. Sau 2.2s hiện lời chúc ---- */
+    setTimeout(function () {
+      const danhXung = (gender === 'thầy') ? 'thầy' : 'cô';
+
+      resultTitle.textContent = `💐 kính gửi ${danhXung} ${escapeHTML(name)} yêu quý 💐`;
+
+      resultMsg.innerHTML =
+        `Mùa 20/11 năm nay mang một ý nghĩa thật khác, bởi chỉ vài tháng nữa thôi, chuyến đò cuối cấp của chúng em sẽ cập bến và mỗi đứa sẽ bước đi trên một hành trình riêng. Cảm ơn <b>${danhXung}</b> <b>${escapeHTML(name)}</b>` +
+        ` đã luôn là điểm tựa vững chắc, bao dung cho những phút bồng bột tuổi 18 và tận tụy dìu dắt chúng em từng chút một. Dù mai này đi đâu, làm gì, chúng em vẫn luôn tự hào vì đã từng là học trò của <b>${danhXung}</b> ` +
+        `hạnh phúc, bình an và mãi là người lái đò tận tụy đưa bao thế hệ học trò sang bờ tri thức. ` +
+        `Chúc <b>${danhXung}</b> thật nhiều sức khỏe, bình an và hạnh phúc! 🌺💖`;
+
+      loadingCard.hidden = true;
+      resultCard.hidden  = false;
+      resultCard.style.animation = 'none';
+      void resultCard.offsetWidth;
+      resultCard.style.animation = '';
+    }, 2200);
+  });
+
+  /* ---- Nút viết lại ---- */
+  againBtn.addEventListener('click', function () {
+    nameInput.value = '';
+    passInput.value = '';
+    resultCard.hidden = true;
+    loadingCard.hidden = true;
+    formCard.hidden = false;
+    formCard.style.animation = 'none';
+    void formCard.offsetWidth;
+    formCard.style.animation = '';
+    nameInput.focus();
+  });
+
+  /* Nhập tên rỗng thì nhắc ngay khi bấm Enter */
+  nameInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') submitBtn.click();
+  });
+
+  /* Chống chèn HTML lạ */
+  function escapeHTML(str) {
+    return str.replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+</script>
+</body>
+</html>
